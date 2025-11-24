@@ -11,6 +11,7 @@
 [Features](#features) • [Installation](#installation) • [Usage](#usage) • [Team](#team) • [Documentation](#documentation)
 
 </div>
+---
 
 ---
 
@@ -330,32 +331,6 @@ american-express-banking/
     └── USER_GUIDE.md              # End-user guide
 ```
 
----
-
-## 📸 Screenshots
-
-### Home Page
-![Home Page](screenshots/home.png)
-*Premium landing page with American Express branding*
-
-### Member Management
-![Members](screenshots/members.png)
-*Comprehensive member directory with tier badges*
-
-### Account Services
-![Accounts](screenshots/accounts.png)
-*Multiple account types with real-time balance tracking*
-
-### Transaction Management
-![Transactions](screenshots/transactions.png)
-*Secure deposit, withdraw, and transfer operations*
-
-### Audit Trail
-![Audit Logs](screenshots/logs.png)
-*Complete system activity monitoring*
-
----
-
 ## 👥 Team Members
 
 <table>
@@ -367,8 +342,8 @@ american-express-banking/
       <br />
       <sub>Lead Developer</sub>
       <br />
-      <a href="mailto:ahmad@example.com">📧 Email</a> •
-      <a href="https://github.com/ahmad">💻 GitHub</a>
+      <a href="mailto:ahmadleo498@gmail.com">📧 Email</a> •
+      <a href="https://github.com/ck-ahmad">💻 GitHub</a>
     </td>
     <td align="center">
       <img src="https://via.placeholder.com/150" width="100px;" alt="Hadia"/>
@@ -377,7 +352,7 @@ american-express-banking/
       <br />
       <sub>Frontend Developer</sub>
       <br />
-      <a href="mailto:hadia@example.com">📧 Email</a> •
+      <a href="mailto:hadia@gmail.com">📧 Email</a> •
       <a href="https://github.com/hadia">💻 GitHub</a>
     </td>
     <td align="center">
@@ -387,7 +362,7 @@ american-express-banking/
       <br />
       <sub>Database Specialist</sub>
       <br />
-      <a href="mailto:tabbaya@example.com">📧 Email</a> •
+      <a href="mailto:tabbaya@gmail.com">📧 Email</a> •
       <a href="https://github.com/tabbaya">💻 GitHub</a>
     </td>
   </tr>
