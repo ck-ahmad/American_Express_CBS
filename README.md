@@ -1,7 +1,5 @@
 # 🏦 American Express - Core Banking System
 
-![Uploading image.png…]()
-
 <div align="center">
 
 ![Python](https://img.shields.io/badge/Python-3.8+-blue.svg) ![Flask](https://img.shields.io/badge/Flask-3.0.0-green.svg) ![MySQL](https://img.shields.io/badge/MySQL-8.0+-orange.svg) ![License](https://img.shields.io/badge/License-MIT-yellow.svg)
@@ -9,6 +7,9 @@
 **A premium banking management system inspired by American Express**
 
 *Core Banking System - DBMS Project*
+
+<img width="959" height="419" alt="image" src="https://github.com/user-attachments/assets/9b092e6e-98f7-4d50-9360-b81c84492c02" />
+
 
 [Features](#features) • [Installation](#installation) • [Usage](#usage) • [Team](#team) • [Documentation](#documentation)
 
