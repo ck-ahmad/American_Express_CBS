@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Support - CBS</title>
+<style>
+    body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; margin: 0; }
+    header { background: linear-gradient(90deg, #1A73E8, #4285F4); padding: 20px 40px; color: #fff; font-size: 1.5rem; font-weight: bold; }
+    nav { background: #fff; display: flex; justify-content: space-around; padding: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    nav a { text-decoration: none; color: #333; font-weight: 500; transition: 0.2s; }
+    nav a:hover { color: #1A73E8; }
+    .container { max-width: 800px; margin: 30px auto; padding: 0 20px; }
+    .card { background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.08); margin-bottom: 20px; }
+    .card h3 { color: #1A73E8; margin-bottom: 15px; }
+    textarea { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #ccc; min-height: 150px; margin-bottom: 10px; }
+    button { padding: 10px 15px; border: none; border-radius: 8px; background: #1A73E8; color: #fff; font-weight: bold; cursor: pointer; transition: 0.2s; }
+    button:hover { background: #0b5ed7; }
+</style>
+</head>
+<body>
+
+<header>
+    CBS Support
+</header>
+
+<nav>
+    <a href="/">Home</a>
+    <a href="/customer">Customers</a>
+    <a href="/account">Accounts</a>
+    <a href="/transaction">Transactions</a>
+    <a href="/logs">Audit Logs</a>
+    <a href="/support">Support</a>
+    <a href="/logout">Logout</a>
+</nav>
+
+<div class="container">
+
+    <div class="card">
+        <h3>Contact Support</h3>
+        <form action="/support" method="POST">
+            <input type="text" name="subject" placeholder="Subject" required>
+            <textarea name="message" placeholder="Your message..." required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

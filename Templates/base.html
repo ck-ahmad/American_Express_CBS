@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Core Banking System{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    {% if session.user %}
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2>CBS</h2>
+            <p class="user-name">{{ session.username }}</p>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">
+                <span class="icon">📊</span>Dashboard
+            </a></li>
+            <li><a href="/customer" class="nav-link {% if request.path == '/customer' %}active{% endif %}">
+                <span class="icon">👥</span>Customers
+            </a></li>
+            <li><a href="/account" class="nav-link {% if request.path == '/account' %}active{% endif %}">
+                <span class="icon">💳</span>Accounts
+            </a></li>
+            <li><a href="/transaction" class="nav-link {% if request.path == '/transaction' %}active{% endif %}">
+                <span class="icon">💸</span>Transactions
+            </a></li>
+            <li><a href="/audit" class="nav-link {% if request.path == '/audit' %}active{% endif %}">
+                <span class="icon">📋</span>Audit Logs
+            </a></li>
+        </ul>
+        <div class="sidebar-footer">
+            <a href="/logout" class="logout-btn">Logout</a>
+        </div>
+    </nav>
+    {% endif %}
+
+    <main class="main-content {% if not session.user %}auth-page{% endif %}">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-container">
+                    {% for category, message in messages %}
+                        <div class="flash flash-{{ category }}">{{ message }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+        
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

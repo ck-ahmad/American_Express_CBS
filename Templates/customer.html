@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Customers - CBS{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Customer Management</h1>
+    <button class="btn btn-primary" onclick="toggleForm('customerForm')">+ Add Customer</button>
+</div>
+
+<div id="customerForm" class="form-box" style="display: none;">
+    <h2>Add New Customer</h2>
+    <form method="POST" action="/customer/add">
+        <div class="form-row">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" name="name" required placeholder="Enter full name">
+            </div>
+            
+            <div class="form-group">
+                <label>CNIC</label>
+                <input type="text" name="cnic" required placeholder="XXXXX-XXXXXXX-X" pattern="[0-9]{5}-[0-9]{7}-[0-9]{1}">
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Contact Number</label>
+            <input type="tel" name="contact" required placeholder="+92 XXX XXXXXXX">
+        </div>
+        
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Create Customer</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleForm('customerForm')">Cancel</button>
+        </div>
+    </form>
+</div>
+
+<div class="content-box">
+    <h2>All Customers</h2>
+    <div class="table-responsive">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Customer ID</th>
+                    <th>Name</th>
+                    <th>CNIC</th>
+                    <th>Contact</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for customer in customers %}
+                <tr>
+                    <td>{{ customer.CustomerID }}</td>
+                    <td>{{ customer.Name }}</td>
+                    <td>{{ customer.CNIC }}</td>
+                    <td>{{ customer.Contact }}</td>
+                    <td>
+                        <a href="/customer/delete/{{ customer.CustomerID }}" 
+                           class="btn-action btn-delete" 
+                           onclick="return confirm('Are you sure you want to delete this customer?')">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

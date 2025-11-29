@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - CBS{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Dashboard</h1>
+    <p>Welcome back, {{ session.username }}</p>
+</div>
+
+<div class="stats-grid">
+    <div class="stat-card">
+        <div class="stat-icon">👥</div>
+        <div class="stat-info">
+            <h3>{{ customer_count }}</h3>
+            <p>Total Customers</p>
+        </div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-icon">💳</div>
+        <div class="stat-info">
+            <h3>{{ account_count }}</h3>
+            <p>Active Accounts</p>
+        </div>
+    </div>
+    
+    <div class="stat-card">
+        <div class="stat-icon">💰</div>
+        <div class="stat-info">
+            <h3>PKR {{ "%.2f"|format(total_balance) }}</h3>
+            <p>Total Balance</p>
+        </div>
+    </div>
+</div>
+
+<div class="content-box">
+    <h2>Recent Transactions</h2>
+    <div class="table-responsive">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>From Account</th>
+                    <th>To Account</th>
+                    <th>Date & Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for trans in recent_transactions %}
+                <tr>
+                    <td>{{ trans.TransID }}</td>
+                    <td><span class="badge badge-{{ trans.Type.lower() }}">{{ trans.Type }}</span></td>
+                    <td class="amount">PKR {{ "%.2f"|format(trans.Amount) }}</td>
+                    <td>{{ trans.FromAccount or '-' }}</td>
+                    <td>{{ trans.ToAccount or '-' }}</td>
+                    <td>{{ trans.DateTime.strftime('%Y-%m-%d %H:%M') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

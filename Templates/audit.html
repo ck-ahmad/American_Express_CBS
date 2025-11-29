@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}Audit Logs - CBS{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Audit Logs</h1>
+    <p>System activity tracking</p>
+</div>
+
+<div class="content-box">
+    <h2>Recent Activity</h2>
+    <div class="table-responsive">
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>Log ID</th>
+                    <th>Operation</th>
+                    <th>Table</th>
+                    <th>User</th>
+                    <th>Date & Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for log in logs %}
+                <tr>
+                    <td>{{ log.LogID }}</td>
+                    <td><span class="badge badge-{{ log.Operation.lower() }}">{{ log.Operation }}</span></td>
+                    <td>{{ log.TableAffected }}</td>
+                    <td>{{ log.UserName }}</td>
+                    <td>{{ log.DateTime.strftime('%Y-%m-%d %H:%M:%S') }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
