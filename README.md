@@ -1,4 +1,4 @@
-# 🏦 Core Banking System (CBS) - Flask Backend
+# 🏦 Core Banking System (CBS) - DBMS Project
 
 <div align="center">
 
